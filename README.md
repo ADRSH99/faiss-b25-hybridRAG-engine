@@ -294,10 +294,3 @@ It is ideal for:
 
 ---
 
-If you want:
-- A Dockerfile  
-- A PDF version of this README  
-- A Jupyter notebook tutorial  
-- A diagram of the full architecture  
-
-Just ask!
