@@ -1,4 +1,4 @@
-# README — Hybrid RAG System with BM25, FAISS, MiniLM, and Cross-Encoder Reranking
+# Hybrid RAG System with BM25, FAISS, MiniLM, and Cross-Encoder Reranking
 
 This repository implements a complete hybrid Retrieval-Augmented Generation (RAG) system over a Wikipedia Music dump. The pipeline integrates:
 
