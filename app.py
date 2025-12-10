@@ -19,9 +19,17 @@ def retrieve():
 @app.route("/ask", methods=["POST"])
 def ask():
     q = request.json["question"]
-    alpha = float(request.json.get("alpha", 0.5))
-    retrieved = retriever.hybrid_retrieve(q, alpha=alpha)
-    context = "\n\n".join([f"Title: {r['title']}\n{r['text']}" for r in retrieved])
+    retrieved = request.json.get("retrieved")
+
+    # If retrieved docs not provided → retrieve once
+    if not retrieved:
+        alpha = float(request.json.get("alpha", 0.5))
+        retrieved = retriever.hybrid_retrieve(q, alpha=alpha)
+
+    context = "\n\n".join(
+        [f"Title: {r['title']}\n{r['text']}" for r in retrieved]
+    )
+
     ans = generate_answer(context, q)
     return jsonify({"answer": ans, "retrieved": retrieved})
 

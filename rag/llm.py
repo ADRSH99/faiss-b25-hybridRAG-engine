@@ -1,8 +1,8 @@
 import google.generativeai as genai
 import os
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-pro")
+genai.configure(api_key="")
+model = genai.GenerativeModel("models/gemini-2.5-flash")
 
 def generate_answer(context, question):
     prompt = f"""
